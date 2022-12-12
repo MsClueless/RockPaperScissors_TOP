@@ -9,6 +9,8 @@ function getComputerChoice() {
     }
 }
 
+let userInput = prompt("Please enter your choice");
+
 function getUserChoice(userInput) {
     userInput = userInput.toLowerCase();
     if (userInput === "rock" || userInput === "paper" || userInput=== "scissors") {
@@ -45,13 +47,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const playerSelection = userInput;
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+
+
 function game() {
     for (let i = 0; i < 5; i++) {
-        playRound()
+        playRound(playerSelection, computerSelection)
     }
-    console.log(game());
-    console.log(game());
-    console.log(game());
-    console.log(game());
-    console.log(game());
+    console.log(playRound());
 }
+game();
